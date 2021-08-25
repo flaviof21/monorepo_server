@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <%- include('include/head', { title: 'Login' }) %>
+<body>
+
+  <%- include('include/header') %>
+
+  <style>
+    #showPassword {
+      position: absolute;
+      margin: 7px 0px 0px -30px;
+      
+    }
+  </style>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("senha");
+      if (x.type === "password") {
+        x.type = "text";
+        document.getElementById("showPassword").src = "/assets/iconmonstr-eye-5.svg";
+      } else {
+        x.type = "password";
+        document.getElementById("showPassword").src = "/assets/iconmonstr-eye-8.svg";
+      }
+    } 
+  </script>
+
+  <form action="/user/login" method="post">
+    <label for="fname">E-mail</label>
+    <input type="text" id="email" name="email" style="background-color: #fff; margin-top: 5px"><br><br>
+    <label for="lname">Senha</label>
+    <input type="password" id="senha" name="senha" style="background-color: #fff;">
+    <span>
+      <img src="/assets/iconmonstr-eye-5.svg" id="showPassword" onclick="myFunction()" style="stroke-opacity: 0;">
+    </span><br><br>
+    <input type="submit" value="Submit" style="background-color: #fff; margin-bottom: 5px">
+  </form> 
+</body>
+</html>

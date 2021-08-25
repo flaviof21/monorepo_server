@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- include head -->
+  <%- include('include/head', { title: 'Atualizar cliente' }) %>
+  <!-- /include head -->
+<body>
+  <!-- include header -->
+  <%- include('include/header') %> 
+  <!-- /include header -->
+
+  <script>
+    async function put() {
+      const empresa = document.getElementById('empresa').value;
+      const email = document.getElementById('email').value;
+      const cnpj = document.getElementById('cnpj').value;
+      const telephone = document.getElementById('telephone').value;
+      const formData = new FormData();
+      formData.append('empresa', empresa);
+      formData.append('email', email);
+      formData.append('cnpj', cnpj);
+      formData.append('telephone', telephone);
+
+      await fetch('/api/clients/<%= clients.id %>', {
+        method: 'put',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          'empresa': empresa,
+          'email': email,
+          'cnpj': cnpj,
+          'telephone': telephone,
+        })
+      })
+      console.log(formData)
+    }
+  </script>
+
+  <!-- form handling -->
+  <form>
+    <label for="name" class="text-light">Empresa</label>
+    <input type="hidden" name="id" style="color: #000000;" value="<%= clients.id %>">
+    <input type="text" name="empresa" id="empresa" value="<%= clients.empresa %>">
+    <label for="Email" class="text-light">Email</label>
+    <input type="text" name="email" id="email" value="<%= clients.email%>">
+
+    <label for="cnpj" class="text-light">Cnpj</label>
+    <input type="text" name="cnpj" id="cnpj" value="<%= clients.cnpj %>" >
+    <label for="telephone" class="text-light">Telefone</label>
+    <input type="text" name="telephone" id="telephone" value="<%= clients.telephone %>">
+
+    <button type="submit" value="submit" onclick="put()">Salvar</button>
+  </form>
+  
+  <!-- /form handling -->
+</body>
+</html>

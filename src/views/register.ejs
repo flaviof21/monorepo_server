@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('include/head', { title: 'Crie sua conta' }) %> 
+<body>
+  <%- include('include/header') %>
+
+  <script>
+    $(document).ready(function() {
+        $("#cpf").mask("000.000.000-00")
+        $("#cnpj1").mask("00.000.000/0000-00")
+        $("#telefone").mask("(00) 0000-0000")
+        $("#salario").mask("999.999.990,00", {reverse: true})
+        $("#cep").mask("00.000-000")
+        $("#dataNascimento").mask("00/00/0000")
+                
+        $("#rg").mask("999.999.999-W", {
+            translation: {
+                'W': {
+                    pattern: /[X0-9]/
+                }
+            },
+            reverse: true
+        })
+
+        var options = {
+            translation: {
+                'A': {pattern: /[A-Z]/},
+                'a': {pattern: /[a-zA-Z]/},
+                'S': {pattern: /[a-zA-Z0-9]/},
+                'L': {pattern: /[a-z]/},
+            }
+        }
+
+        $("#placa").mask("AAA-0000", options)
+        $("#codigo").mask("AA.LLL.0000", options)
+        $("#celular1").mask("(00) 00000-0009")
+        $("#celular1").blur(function(event){
+            if ($(this).val().length == 15){
+                $("#celular1").mask("(00) 00000-0009")
+            } else {
+                $("#celular1").mask("(00) 0000-0009")
+            }
+        })
+    })
+  </script>
+  
+  <form action="/user/register" method="post">
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email">
+    <label for="password">Senha</label>
+    <input type="password" name="password" id="password">
+    <button type="submit" value="submit">Registrar</button>
+  </form>
+
+</body>
+</html>

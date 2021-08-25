@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<%- include('./include/head', { title: 'Pagina de View' }) %>
+<body>
+    <%- include('./include/header') %>
+    <script>
+        const database = firebase.database()
+        database.ref().once('value', (db) => {
+            console.log(db.exists())
+        })
+    </script>
+</body>
+</html>

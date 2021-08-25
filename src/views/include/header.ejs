@@ -1,0 +1,77 @@
+<!-- <header id="header">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light justify-content-between" id='nav'>
+            <a class="navbar-brand" href="/">
+                <img src="/assets/flashLogo.png" class="img-fluid" />
+            </a>
+            <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false" id="btn-mobile">
+                <span id='hamburger'></span>
+            </button>
+            <div>
+                <ul id="menu" role="menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/clients">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Certificados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">Sobre nós</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header> -->
+<div id="header">
+    <div class="container">
+      <nav
+        class="navbar navbar-expand-lg navbar-light justify-content-between"
+      >
+        <a class="navbar-brand" href="#">
+          <img src="/assets/flashLogo.png" class="img-fluid" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Página Inicial</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Clientes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Certificados</a>
+            </li>
+          
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+<!-- <script>
+    const btnMobile = document.getElementById('btn-mobile');
+    function toggleMenu() {
+        const nav = document.getElementById('nav');
+        nav.classList.toggle('active');
+        const active = nav.classList.contains('active');
+        event.currentTarget.setAttribute('aria-expanded', active);
+        if (active) {
+          event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+        } else {
+          event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+        }
+    }
+    btnMobile.addEventListener('click', toggleMenu);
+</script> -->
