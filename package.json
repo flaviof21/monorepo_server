@@ -43,6 +43,7 @@
     "ts-node-dev": "^1.1.8"
   },
   "scripts": {
+    "start": "ts-node --ignore-watch ./node-modules .src/server.ts",
     "dev": "ts-node-dev --respawn --ignore-watch ./node-modules ./src/server.ts",
     "createTableClient": "ts-node-dev src/models/createTable/criarTabelaClient.ts",
     "createTableLogin": "ts-node-dev src/models/createTable/criarTabelaLogin.ts",
